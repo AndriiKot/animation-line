@@ -4,7 +4,6 @@
 body {
   display: flex;
   min-height: 100vh;
-  /* background-color: gray; */
   background-color: rgb(24, 25, 24);
   align-items: center;
   justify-content: center;
@@ -12,14 +11,9 @@ body {
 
 .box-animation{
   --size: 40vh;
-  --color: rgb(54, 241, 54);
-  --t: transparent; 
   height: var(--size);
   width: var(--size);
    background-color: rgb(35, 35, 33);
-   /* background: linear-gradient(45deg, var(--color) 5%,var(--t) 5%,var(--t) 10%,var(--color) 10%,
-   var(--color) 15%,var(--t) 15%); */
-   /* background: linear-gradient(45deg, red 10%,transparent 10%); */
    -webkit-box-reflect: below 5% linear-gradient(transparent,rgba(0, 0, 0, 0.44));
    animation: animation_line 1s linear 0.1s  infinite reverse;
 }
