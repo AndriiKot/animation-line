@@ -15,11 +15,7 @@ for (;procent <= 100;i++){
   a = `${color_start} ${procent}%`
   b = `${color_end} ${procent}%`
 
-  if(i % 2 == 0){
-    compon_str = a +','+ b ;
-  } else{
-    compon_str = b + ',' + a;
-  }
+  compon_str = (i % 2 == 0) ? a +','+ b : b + ',' + a;
   
   str += compon_str +','
   procent += 5
