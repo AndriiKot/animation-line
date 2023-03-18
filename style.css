@@ -10,12 +10,13 @@ body {
 }
 
 .box-animation{
-  --size: 40vh;
+  --size: 80vh;
   height: var(--size);
   width: var(--size);
    background-color: rgb(35, 35, 33);
    -webkit-box-reflect: below 5% linear-gradient(transparent,rgba(0, 0, 0, 0.44));
    animation: animation_line 1s linear 0.1s  infinite reverse;
+   border-radius: 50%;
 }
 
 @keyframes animation_line
