@@ -18,7 +18,7 @@ for (;procent <= 100;i++){
   compon_str = (i % 2 == 0) ? a +','+ b : b + ',' + a;
   
   str += compon_str +','
-  procent += 5
+  procent += 30
 }
 
 let final_str
@@ -26,28 +26,26 @@ let final_str
 final_str = `linear-gradient(${deg}deg,${str}`
 final_str = final_str.slice(0,final_str.length-1)+')'
 
-// element.style.transform = 'rotate(90deg)'
 element.style.background = final_str
 
 
     let nIntervId;
     
 
-    function ch() {
-      nIntervId = setInterval(m,40);
+    function animation_rotate_interval() {
+      nIntervId = setInterval(calc_animation_rotate);
     }
-      let int_1 = 0
-      let int_2 = 0
-    function m(){
-      
-      int_2 = int_1 + 1
+
+    let int_1 = 0
+    let int_2 = 0
+
+    function calc_animation_rotate(){
+      int_2 = int_1 + 0.1
       element.style.transform = element.style.transform == `rotate(${int_1}deg)` ? `rotate(${int_2}deg)` : `rotate(${int_1}deg)`;
       if(int_2 > 360 || int_1 > 360){
         int_1 = 0
       }
-      int_1 += 1
-      console.log(int_1)
-      console.log(int_2)
+      int_1 += 0.1
   }
 
 
