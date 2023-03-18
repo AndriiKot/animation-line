@@ -5,20 +5,20 @@ let deg,color_start,color_end,procent,str
 deg = 45
 color_start = '#00cc99'
 color_end  = 'transparent'
-procent = 0
+procent_width_line = 0
 str = ''
 
 let i = 0,a,b,x,y
 
-for (;procent <= 100;i++){
+for (;procent_width_line <= 100;i++){
   let compon_str
-  a = `${color_start} ${procent}%`
-  b = `${color_end} ${procent}%`
+  a = `${color_start} ${procent_width_line}%`
+  b = `${color_end} ${procent_width_line}%`
 
   compon_str = (i % 2 == 0) ? a +','+ b : b + ',' + a;
   
   str += compon_str +','
-  procent += 30
+  procent_width_line += 30
 }
 
 let final_str
@@ -45,7 +45,7 @@ element.style.background = final_str
       if(int_2 > 360 || int_1 > 360){
         int_1 = 0
       }
-      int_1 += 0.1
+      int_1 += 0.001
   }
 
 
