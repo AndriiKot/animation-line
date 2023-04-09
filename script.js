@@ -1,21 +1,19 @@
 
-let element = document.querySelector('.box-animation')
-let deg,color_start,color_end,procent,str
+const element = document.querySelector('.box-animation')
 
-deg = 45
-color_start = '#00cc99'
-color_end  = 'transparent'
-procent_width_line = 0
-str = ''
 
-let i = 0,a,b,x,y
+const deg = 20
+const color_start = '#00cc99'
+const color_end  = 'transparent'
+let procent_width_line = 0
+let str = ''
+
+let i = 0
 
 for (;procent_width_line <= 100;i++){
-  let compon_str
-  a = `${color_start} ${procent_width_line}%`
-  b = `${color_end} ${procent_width_line}%`
-
-  compon_str = (i % 2 == 0) ? a +','+ b : b + ',' + a;
+ const a = `${color_start} ${procent_width_line}%`
+ const b = `${color_end} ${procent_width_line}%`
+ const compon_str = (i % 2 == 0) ? a +','+ b : b + ',' + a;
   
   str += compon_str +','
   procent_width_line += 30
@@ -33,19 +31,36 @@ element.style.background = final_str
     
 
     function animation_rotate_interval() {
-      nIntervId = setInterval(calc_animation_rotate);
+      nIntervId = setInterval(calc_animation_rotate,100);
     }
 
     let int_1 = 0
     let int_2 = 0
 
     function calc_animation_rotate(){
+      final_str = `linear-gradient(${deg}deg,${str}`
+      final_str = final_str.slice(0,final_str.length-1)+')'
+
+      element.style.background = final_str
+
       int_2 = int_1 + 0.1
       element.style.transform = element.style.transform == `rotate(${int_1}deg)` ? `rotate(${int_2}deg)` : `rotate(${int_1}deg)`;
+      
       if(int_2 > 360 || int_1 > 360){
         int_1 = 0
       }
       int_1 += 0.001
+
+      if(deg > 340){
+        deg = 20
+      }
+      if (deg > 50 && deg < 130){
+           deg = 130
+      }
+      if (deg < 310 && deg > 230 ){
+        deg = 340
+      }
+      deg += 1
   }
 
 
