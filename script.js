@@ -6,6 +6,7 @@ const color_start = '#00cc99'
 const color_end  = 'transparent'
 let procent_width_line = 0
 const max_procent_width_line = 100;
+const step_procent_width_line = 30
 let str = ''
 
 let i = 0
@@ -16,7 +17,7 @@ for (;procent_width_line <= max_procent_width_line;i++){
  const compon_str = (i % 2 == 0) ? a +','+ b : b + ',' + a;
   
   str += compon_str +','
-  procent_width_line += 30
+  procent_width_line += step_procent_width_line;
 }
 
 let final_str
